@@ -1,0 +1,75 @@
+{
+  "schema": "zsilip.public_evidence_manifest.v1",
+  "generated_for": "public GitHub Pages landing page",
+  "captured_at_local": "2026-06-17T10:42:34+02:00",
+  "source_scope": "redacted point-in-time excerpts from local Zsilip runtime proof files",
+  "redaction_policy": {
+    "removed_or_masked": [
+      "client IP addresses",
+      "MAC addresses",
+      "BSSID values",
+      "SSID names",
+      "phone numbers",
+      "recipient identifiers",
+      "tokens",
+      "private paths where not needed for interpretation"
+    ],
+    "kept": [
+      "artifact schema names",
+      "service role names",
+      "interface role labels",
+      "decision reasons",
+      "score component names",
+      "counts",
+      "high-level timestamps",
+      "non-sensitive proof provenance labels"
+    ]
+  },
+  "claims_supported": [
+    {
+      "claim": "Zsilip is a multi-service local edge system, not a static mockup.",
+      "evidence_file": "system-snapshot.redacted.json",
+      "evidence_paths": [
+        "service_surface",
+        "presentation_smoke",
+        "ap_health"
+      ]
+    },
+    {
+      "claim": "Uplink selection is based on observable route and score signals.",
+      "evidence_file": "system-snapshot.redacted.json",
+      "evidence_paths": [
+        "uplink_publication"
+      ]
+    },
+    {
+      "claim": "Campaign execution is gated by temporal state and external HTTP policy.",
+      "evidence_file": "system-snapshot.redacted.json",
+      "evidence_paths": [
+        "campaign_temporal_gate"
+      ]
+    },
+    {
+      "claim": "The project already has a proof-first and handoff-oriented audit layer.",
+      "evidence_file": "system-snapshot.redacted.json",
+      "evidence_paths": [
+        "hardening_snapshot",
+        "artifact_inventory"
+      ]
+    }
+  ],
+  "claims_not_made": [
+    "This is not a security audit report.",
+    "This is not a production SLA or reliability guarantee.",
+    "This does not expose live administrative access.",
+    "This does not prove legal or regulatory readiness.",
+    "This does not publish raw private network data."
+  ],
+  "recommended_next_public_evidence": [
+    "redacted failover test timeline with packet-loss chart",
+    "service and port inventory with privilege boundaries",
+    "restore drill record",
+    "one-page privacy and log-retention note",
+    "expert review checklist with open findings"
+  ]
+}
