@@ -1,1 +1,377 @@
-<!doctype html><html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Zsilip is a local-first edge network research prototype for uplink resilience, client observability, policy experiments and proof-first demos."><title>Zsilip | Edge network research kit</title><link rel="stylesheet" href="assets/site.css"></head><body><header class="site-header"><nav class="nav" aria-label="F&#337; navig&#225;ci&#243;"><a class="brand" href="#top" aria-label="Zsilip kezd&#337;lap"><span class="brand-mark">Z</span><span>Zsilip</span></a><div class="nav-links"><a href="#what">Mi ez?</a><a href="#layers">R&#233;tegek</a><a href="#roadmap">Roadmap</a><a href="#safe">Keretez&#233;s</a></div></nav></header><main id="top"><section class="hero" aria-labelledby="hero-title"><div><p class="eyebrow">Local-first edge lab</p><h1 id="hero-title">Zsilip</h1><p class="hero-copy"> Egy &#246;nmag&#225;t magyar&#225;z&#243; edge-h&#225;l&#243;zati kutat&#243;platform, amely t&#246;bb uplinket, kliensviselked&#233;si jeleket, DNS/HTTP megfigyel&#233;st &#233;s proof-first prezent&#225;ci&#243;s r&#233;teget k&#246;t &#246;ssze egy hordozhat&#243; protot&#237;pusban. </p><div class="hero-actions"><a class="button primary" href="#roadmap">Roadmap megn&#233;z&#233;se</a><a class="button" href="#safe">Mit nem &#225;ll&#237;t?</a></div><div class="status-strip" aria-label="Projekt st&#225;tusz"><div class="status-pill"><strong>Prototype</strong><span>kutat&#225;si &#225;llapot</span></div><div class="status-pill"><strong>Proof-first</strong><span>&#225;llapot &#233;s bizony&#237;t&#233;k</span></div><div class="status-pill"><strong>Local-first</strong><span>helyi h&#225;l&#243;zati f&#243;kusz</span></div><div class="status-pill"><strong>Field lab</strong><span>demo &#233;s valid&#225;ci&#243;</span></div></div></div><div class="hero-visual" aria-hidden="true"><img src="assets/zsilip-system-map.svg" alt=""></div></section><section class="section split-band" id="what" aria-labelledby="what-title"><div class="section-head"><p class="section-kicker">Meghat&#225;roz&#225;s</p><h2 id="what-title">Nem egyszer&#369; router. Nem k&#233;sz term&#233;k. Egy vizsg&#225;lhat&#243; h&#225;l&#243;zati m&#369;hely.</h2><p> A Zsilip c&#233;lja, hogy l&#225;that&#243;v&#225; tegye, mi t&#246;rt&#233;nik egy peremeszk&#246;z&#246;n: melyik uplink &#233;l, milyen kliens van jelen, milyen policy fogja meg a forgalmat, &#233;s milyen bizony&#237;t&#233;k t&#225;masztja al&#225; az aktu&#225;lis &#225;llapotot. </p></div><div class="grid three"><article class="card"><span class="tag">Core</span><h3>H&#225;l&#243;zati &#225;tj&#225;r&#243;</h3><p>T&#246;bb uplink, helyi AP, DNS/DHCP, NAT, mobil fallback &#233;s m&#233;rhet&#337; failover logika egy inspect&#225;lhat&#243; Linux-alapon.</p></article><article class="card"><span class="tag">Observability</span><h3>Kliensk&#233;p</h3><p>DHCP, DNS, hostn&#233;v, IP/MAC alias &#233;s viselked&#233;si jelz&#233;sek alapj&#225;n &#233;p&#237;tett, visszakereshet&#337; kliensn&#233;zet.</p></article><article class="card"><span class="tag">Proof</span><h3>&#214;nprezent&#225;ci&#243;</h3><p>Read-only st&#225;tuszok, proof f&#225;jlok &#233;s demo oldalak seg&#237;tik, hogy szakmai k&#246;z&#246;ns&#233;g el&#337;tt is k&#246;vethet&#337; legyen a m&#369;k&#246;d&#233;s.</p></article></div></section><section class="section" aria-labelledby="capabilities-title"><div class="section-head"><p class="section-kicker">K&#233;pess&#233;gek</p><h2 id="capabilities-title">Amit ma &#233;rdemes bel&#337;le megmutatni</h2></div><div class="grid three"><article class="card"><h3>Uplink resilience</h3><p>Ethernet, Wi-Fi &#233;s mobil &#250;tvonalak &#225;llapot&#225;nak m&#233;r&#233;se, rangsorol&#225;sa &#233;s failover logik&#225;ja.</p></article><article class="card"><h3>DNS &#233;s policy n&#233;zet</h3><p>Kliensenk&#233;nti lek&#233;rdez&#233;si napl&#243;, sz&#369;r&#233;si kontroll &#233;s h&#225;l&#243;zati jelenl&#233;tb&#337;l &#233;p&#237;tett &#225;llapotk&#233;p.</p></article><article class="card"><h3>Temporal modell</h3><p>Awake, sleep &#233;s break jelleg&#369; &#225;llapotokkal modellezhet&#337;, hogy mikor szabad egy kliensnek aktivit&#225;st mutatnia.</p></article><article class="card"><h3>Campaign matrix</h3><p>Kontroll&#225;lt HTTP v&#233;grehajt&#225;sok &#233;s blokkol&#225;sok megjelen&#237;t&#233;se kliensenk&#233;nt, bizony&#237;t&#233;kforr&#225;sokkal.</p></article><article class="card"><h3>Failover demo</h3><p>K&#233;zi kih&#250;z&#243;s &#233;s &#250;j SSID tesztekhez haszn&#225;lhat&#243; &#225;llapotn&#233;zet, route truth &#233;s m&#233;r&#233;si jegyz&#337;k&#246;nyv.</p></article><article class="card"><h3>Edge communication alap</h3><p>VPN &#233;s VoIP ir&#225;nyba b&#337;v&#237;thet&#337; alap, jelenleg kutat&#225;si k&#233;pess&#233;gk&#233;nt, nem alap&#233;rtelmezett term&#233;kfunkci&#243;k&#233;nt.</p></article></div></section><section class="section split-band" id="layers" aria-labelledby="layers-title"><div class="section-head"><p class="section-kicker">&#193;tadhat&#243;s&#225;gi t&#233;rk&#233;p</p><h2 id="layers-title">A legfontosabb d&#246;nt&#233;s: k&#252;l&#246;nv&#225;lasztani a r&#233;tegeket</h2><p> A Zsilip &#233;rt&#233;ke nem egyetlen gombban van, hanem abban, hogy t&#246;bb h&#225;l&#243;zati &#233;s kutat&#225;si r&#233;teget tesz l&#225;that&#243;v&#225;. Pilot el&#337;tt ezeket k&#252;l&#246;n profilba kell rendezni. </p></div><div class="layers"><div class="layer"><div class="layer-name">Core profil</div><p>Uplink, AP, DNS, klienskarant&#233;n, helyi admin, rollback &#233;s m&#233;rhet&#337; gateway m&#369;k&#246;d&#233;s.</p></div><div class="layer"><div class="layer-name">Lab profil</div><p>Temporal, mimic, campaign &#233;s controlled execution modulok kutat&#225;si vagy oktat&#225;si c&#233;lra.</p></div><div class="layer"><div class="layer-name">Demo profil</div><p>Present oldal, vizu&#225;lis proof, OLED &#233;s el&#337;re rendezett demonstr&#225;ci&#243;s n&#233;zetek.</p></div><div class="layer"><div class="layer-name">Risk profil</div><p>Public endpointok, root k&#246;zeli helper l&#225;ncok, exit-node, SIM/VoIP &#233;s dual-use elemek k&#252;l&#246;n guardrail alatt.</p></div></div></section><section class="section" id="roadmap" aria-labelledby="roadmap-title"><div class="section-head"><p class="section-kicker">Roadmap</p><h2 id="roadmap-title">90 napos valid&#225;ci&#243;s &#250;t</h2><p> A k&#246;vetkez&#337; c&#233;l nem sz&#233;les piacra dob&#225;s, hanem annak bizony&#237;t&#225;sa, hogy lev&#225;laszthat&#243; egy &#225;tadhat&#243; demonstr&#225;tor &#233;s egy k&#233;s&#337;bbi pilotmag. </p></div><div class="timeline"><article class="step"><div class="step-number">1</div><h3>0-30 nap</h3><ul><li>core, lab, demo &#233;s risk scope r&#246;gz&#237;t&#233;se</li><li>service, port, timer &#233;s auth lelt&#225;r</li><li>demo script &#233;s prezent&#225;ci&#243;s &#225;llapot stabiliz&#225;l&#225;sa</li></ul></article><article class="step"><div class="step-number">2</div><h3>31-60 nap</h3><ul><li>core-only image els&#337; v&#225;ltozata</li><li>failover &#233;s restore m&#233;r&#233;si protokoll</li><li>privacy, logol&#225;s &#233;s support jegyzet</li></ul></article><article class="step"><div class="step-number">3</div><h3>61-90 nap</h3><ul><li>15-25 valid&#225;ci&#243;s interj&#250;</li><li>oktat&#225;si vagy klaszter el&#337;pilot d&#246;nt&#233;s</li><li>go/no-go memo a k&#246;vetkez&#337; 90 napra</li></ul></article></div></section><section class="section split-band" id="safe" aria-labelledby="safe-title"><div class="section-head"><p class="section-kicker">Biztons&#225;gos keretez&#233;s</p><h2 id="safe-title">Mit nem &#225;ll&#237;t ez az oldal?</h2></div><div class="grid two"><div class="notice"> A Zsilip jelenleg nem k&#233;sz, audit&#225;lt security appliance. Kutat&#225;si &#233;s demonstr&#225;ci&#243;s protot&#237;pus, amelyhez pilot el&#337;tt attack-surface lelt&#225;r, privilege-boundary tiszt&#237;t&#225;s, restore-pr&#243;ba &#233;s adatkezel&#233;si keret sz&#252;ks&#233;ges. </div><div class="card"><h3>Nem alapfunkci&#243;k&#233;nt kommunik&#225;land&#243;</h3><ul class="plain-list"><li>exit-node vagy anonim &#225;tj&#225;r&#243;</li><li>SIM, GSM vagy VoIP proxy</li><li>nyitott public JSON/API fel&#252;let</li><li>f&#233;lre&#233;rthet&#337; forgalom- vagy presence-gener&#225;l&#225;s</li></ul></div></div></section><section class="section" aria-labelledby="questions-title"><div class="section-head"><p class="section-kicker">Valid&#225;ci&#243;</p><h2 id="questions-title">&#214;t k&#233;rd&#233;s, amelyre v&#225;laszt keres</h2></div><div class="grid two"><article class="card"><h3>Probl&#233;ma</h3><p>Hol f&#225;j jobban a c&#233;lk&#246;z&#246;ns&#233;gnek: uplink backup, IoT izol&#225;ci&#243;, DNS policy, kliensobservability vagy oktathat&#243; edge lab?</p></article><article class="card"><h3>Bizalom</h3><p>Milyen bizony&#237;t&#233;k, dokument&#225;ci&#243; &#233;s restore garancia kell ahhoz, hogy valaki h&#225;l&#243;zatba tegye?</p></article><article class="card"><h3>Scope</h3><p>Mely modulokat kell kiv&#225;gni vagy elrejteni, hogy egy core demonstr&#225;tor tiszta maradjon?</p></article><article class="card"><h3>Forma</h3><p>Oktat&#225;si eszk&#246;z, klaszter-valid&#225;ci&#243;, kutat&#225;si pilot vagy k&#233;s&#337;bbi appliance ir&#225;ny adja a legtiszt&#225;bb k&#246;vetkez&#337; l&#233;p&#233;st?</p></article></div></section></main><footer class="footer"><strong>Zsilip</strong><p> Original public-facing copy and visuals prepared for a GitHub Pages landing page. No external images, icon packs, fonts or vendor screenshots are bundled. </p></footer></body></html>
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Zsilip is a local-first edge network research prototype for uplink resilience, client observability, policy experiments and proof-first demos.">
+  <title>Zsilip | Edge network research kit</title>
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Fő navigáció">
+      <a class="brand" href="#top" aria-label="Zsilip kezdőlap">
+        <span class="brand-mark">Z</span>
+        <span>Zsilip</span>
+      </a>
+      <div class="nav-links">
+        <a href="#what">Mi ez?</a>
+        <a href="#evidence">Bizonyíték</a>
+        <a href="#layers">Rétegek</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#safe">Keretezés</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <p class="eyebrow">Local-first edge lab</p>
+        <h1 id="hero-title">Zsilip</h1>
+        <p class="hero-copy">
+          Egy önmagát magyarázó edge-hálózati kutatóplatform, amely több uplinket,
+          kliensviselkedési jeleket, DNS/HTTP megfigyelést és proof-first prezentációs
+          réteget köt össze egy hordozható prototípusban.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#evidence">Bizonyíték megnyitása</a>
+          <a class="button" href="#roadmap">Roadmap megnézése</a>
+          <a class="button" href="#safe">Mit nem állít?</a>
+        </div>
+        <div class="status-strip" aria-label="Projekt státusz">
+          <div class="status-pill">
+            <strong>Prototype</strong>
+            <span>kutatási állapot</span>
+          </div>
+          <div class="status-pill">
+            <strong>Proof-first</strong>
+            <span>állapot és bizonyíték</span>
+          </div>
+          <div class="status-pill">
+            <strong>Local-first</strong>
+            <span>helyi hálózati fókusz</span>
+          </div>
+          <div class="status-pill">
+            <strong>Field lab</strong>
+            <span>demo és validáció</span>
+          </div>
+          <div class="status-pill">
+            <strong>178 JSON</strong>
+            <span>redaktálható proof-artifact</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <img src="assets/zsilip-system-map.svg" alt="">
+      </div>
+    </section>
+
+    <section class="section split-band" id="what" aria-labelledby="what-title">
+      <div class="section-head">
+        <p class="section-kicker">Meghatározás</p>
+        <h2 id="what-title">Nem egyszerű router. Nem kész termék. Egy vizsgálható hálózati műhely.</h2>
+        <p>
+          A Zsilip célja, hogy láthatóvá tegye, mi történik egy peremeszközön:
+          melyik uplink él, milyen kliens van jelen, milyen policy fogja meg a
+          forgalmat, és milyen bizonyíték támasztja alá az aktuális állapotot.
+        </p>
+      </div>
+      <div class="grid three">
+        <article class="card">
+          <span class="tag">Core</span>
+          <h3>Hálózati átjáró</h3>
+          <p>Több uplink, helyi AP, DNS/DHCP, NAT, mobil fallback és mérhető failover logika egy inspectálható Linux-alapon.</p>
+        </article>
+        <article class="card">
+          <span class="tag">Observability</span>
+          <h3>Klienskép</h3>
+          <p>DHCP, DNS, hostnév, IP/MAC alias és viselkedési jelzések alapján épített, visszakereshető kliensnézet.</p>
+        </article>
+        <article class="card">
+          <span class="tag">Proof</span>
+          <h3>Önprezentáció</h3>
+          <p>Read-only státuszok, proof fájlok és demo oldalak segítik, hogy szakmai közönség előtt is követhető legyen a működés.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="capabilities-title">
+      <div class="section-head">
+        <p class="section-kicker">Képességek</p>
+        <h2 id="capabilities-title">Amit ma érdemes belőle megmutatni</h2>
+      </div>
+      <div class="grid three">
+        <article class="card">
+          <h3>Uplink resilience</h3>
+          <p>Ethernet, Wi-Fi és mobil útvonalak állapotának mérése, rangsorolása és failover logikája.</p>
+        </article>
+        <article class="card">
+          <h3>DNS és policy nézet</h3>
+          <p>Kliensenkénti lekérdezési napló, szűrési kontroll és hálózati jelenlétből épített állapotkép.</p>
+        </article>
+        <article class="card">
+          <h3>Temporal modell</h3>
+          <p>Awake, sleep és break jellegű állapotokkal modellezhető, hogy mikor szabad egy kliensnek aktivitást mutatnia.</p>
+        </article>
+        <article class="card">
+          <h3>Campaign matrix</h3>
+          <p>Kontrollált HTTP végrehajtások és blokkolások megjelenítése kliensenként, bizonyítékforrásokkal.</p>
+        </article>
+        <article class="card">
+          <h3>Failover demo</h3>
+          <p>Kézi kihúzós és új SSID tesztekhez használható állapotnézet, route truth és mérési jegyzőkönyv.</p>
+        </article>
+        <article class="card">
+          <h3>Edge communication alap</h3>
+          <p>VPN és VoIP irányba bővíthető alap, jelenleg kutatási képességként, nem alapértelmezett termékfunkcióként.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section evidence-section" id="evidence" aria-labelledby="evidence-title">
+      <div class="section-head">
+        <p class="section-kicker">Evidence pack</p>
+        <h2 id="evidence-title">A szakmai állításokhoz redaktált bizonyíték is tartozik.</h2>
+        <p>
+          A publikus oldal nem élő hozzáférést és nem belső dumpot ad, hanem egy
+          redaktált pillanatképet arról, milyen proof fájlokból dolgozik a Zsilip.
+          A cél az, hogy egy hozzáértő lássa: a bemutató mögött mérési, döntési és
+          provenance-réteg van.
+        </p>
+      </div>
+
+      <div class="evidence-metrics" aria-label="Redaktált bizonyítéki metrikák">
+        <div>
+          <strong>230</strong>
+          <span>runtime proof fájl</span>
+        </div>
+        <div>
+          <strong>178</strong>
+          <span>JSON artifact</span>
+        </div>
+        <div>
+          <strong>12</strong>
+          <span>Zsilip service</span>
+        </div>
+        <div>
+          <strong>0</strong>
+          <span>aktuális hardening P1/P2</span>
+        </div>
+      </div>
+
+      <div class="grid two">
+        <article class="evidence-card">
+          <span class="tag">Service truth</span>
+          <h3>Nem csak weboldalak: futó rendszerfelület</h3>
+          <p>
+            A smoke minta futó service-eket, HTTP felületeket és AP/DNS állapotot
+            ellenőriz. Ez azt mutatja, hogy a Zsilip nem statikus mockup, hanem
+            több daemonból álló edge rendszer.
+          </p>
+        </article>
+        <article class="evidence-card">
+          <span class="tag">Uplink truth</span>
+          <h3>Döntési napló score komponensekkel</h3>
+          <p>
+            A redaktált uplink snapshot külön kezeli az aktív útvonalat, a legjobb
+            jelöltet, a captive portal jelet, a loss/latency/jitter büntetéseket és
+            a fallback interfészeket.
+          </p>
+        </article>
+        <article class="evidence-card">
+          <span class="tag">Client provenance</span>
+          <h3>Campaign döntés forrásútvonalakkal</h3>
+          <p>
+            A campaign minta nem csak annyit ír, hogy egy kliens aktív vagy tiltott:
+            megmutatja a temporal gate, registry, session plan és executor források
+            szerepét is.
+          </p>
+        </article>
+        <article class="evidence-card">
+          <span class="tag">Bounded claims</span>
+          <h3>Bizonyít, de nem ígér túl</h3>
+          <p>
+            A csomag pont-in-time, redaktált és önkorlátozó: bizonyítja a
+            rendszerlogika létezését, de nem állít auditált biztonságot,
+            SLA-t vagy kész appliance státuszt.
+          </p>
+        </article>
+      </div>
+
+      <div class="ledger-wrap" aria-label="Ellenőrizhető állítások">
+        <table class="evidence-ledger">
+          <thead>
+            <tr>
+              <th>Állítás</th>
+              <th>Mit lehet ellenőrizni?</th>
+              <th>Publikus artifact</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Több daemon együtt adja a helyi edge működést.</td>
+              <td>zsilip-api, netmon, uplink brain, switcher, DNS parser, mimic, payload lab és OLED service szerepek.</td>
+              <td><a href="evidence/system-snapshot.redacted.json">system snapshot</a></td>
+            </tr>
+            <tr>
+              <td>Az uplink választás mérési komponensekből áll.</td>
+              <td>aktív/best útvonal, portal HTTP 204, loss, latency, jitter, gateway és score okok redaktált formában.</td>
+              <td><a href="evidence/system-snapshot.redacted.json">uplink excerpt</a></td>
+            </tr>
+            <tr>
+              <td>A campaign végrehajtás temporal és külső gate szerint tilt vagy enged.</td>
+              <td>selected/live/execute állapotok, tiltási okok és provenance források kliensazonosító nélkül.</td>
+              <td><a href="evidence/system-snapshot.redacted.json">campaign excerpt</a></td>
+            </tr>
+            <tr>
+              <td>A publikus állítások szándékosan korlátozottak.</td>
+              <td>redakciós szabályok, kizárások, nem-bizonyított állítások és következő auditlépések.</td>
+              <td><a href="evidence/manifest.json">manifest</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="artifact-box">
+        <div>
+          <h3>Megnyitható redaktált bizonyítékcsomag</h3>
+          <p>
+            A minták 2026-06-17-i helyi rendszerállapotból készültek, IP-, MAC-,
+            SSID-, telefonszám- és tokenadatok nélkül.
+          </p>
+        </div>
+        <div class="artifact-links">
+          <a class="button primary" href="evidence/manifest.json">manifest.json</a>
+          <a class="button" href="evidence/system-snapshot.redacted.json">snapshot.json</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section split-band" id="layers" aria-labelledby="layers-title">
+      <div class="section-head">
+        <p class="section-kicker">Átadhatósági térkép</p>
+        <h2 id="layers-title">A legfontosabb döntés: különválasztani a rétegeket</h2>
+        <p>
+          A Zsilip értéke nem egyetlen gombban van, hanem abban, hogy több hálózati
+          és kutatási réteget tesz láthatóvá. Pilot előtt ezeket külön profilba kell rendezni.
+        </p>
+      </div>
+      <div class="layers">
+        <div class="layer">
+          <div class="layer-name">Core profil</div>
+          <p>Uplink, AP, DNS, klienskarantén, helyi admin, rollback és mérhető gateway működés.</p>
+        </div>
+        <div class="layer">
+          <div class="layer-name">Lab profil</div>
+          <p>Temporal, mimic, campaign és controlled execution modulok kutatási vagy oktatási célra.</p>
+        </div>
+        <div class="layer">
+          <div class="layer-name">Demo profil</div>
+          <p>Present oldal, vizuális proof, OLED és előre rendezett demonstrációs nézetek.</p>
+        </div>
+        <div class="layer">
+          <div class="layer-name">Risk profil</div>
+          <p>Public endpointok, root közeli helper láncok, exit-node, SIM/VoIP és dual-use elemek külön guardrail alatt.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="roadmap" aria-labelledby="roadmap-title">
+      <div class="section-head">
+        <p class="section-kicker">Roadmap</p>
+        <h2 id="roadmap-title">90 napos validációs út</h2>
+        <p>
+          A következő cél nem széles piacra dobás, hanem annak bizonyítása, hogy
+          leválasztható egy átadható demonstrátor és egy későbbi pilotmag.
+        </p>
+      </div>
+      <div class="timeline">
+        <article class="step">
+          <div class="step-number">1</div>
+          <h3>0-30 nap</h3>
+          <ul>
+            <li>core, lab, demo és risk scope rögzítése</li>
+            <li>service, port, timer és auth leltár</li>
+            <li>demo script és prezentációs állapot stabilizálása</li>
+          </ul>
+        </article>
+        <article class="step">
+          <div class="step-number">2</div>
+          <h3>31-60 nap</h3>
+          <ul>
+            <li>core-only image első változata</li>
+            <li>failover és restore mérési protokoll</li>
+            <li>privacy, logolás és support jegyzet</li>
+          </ul>
+        </article>
+        <article class="step">
+          <div class="step-number">3</div>
+          <h3>61-90 nap</h3>
+          <ul>
+            <li>15-25 validációs interjú</li>
+            <li>oktatási vagy klaszter előpilot döntés</li>
+            <li>go/no-go memo a következő 90 napra</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section split-band" id="safe" aria-labelledby="safe-title">
+      <div class="section-head">
+        <p class="section-kicker">Biztonságos keretezés</p>
+        <h2 id="safe-title">Mit nem állít ez az oldal?</h2>
+      </div>
+      <div class="grid two">
+        <div class="notice">
+          A Zsilip jelenleg nem kész, auditált security appliance. Kutatási és demonstrációs prototípus,
+          amelyhez pilot előtt attack-surface leltár, privilege-boundary tisztítás, restore-próba és
+          adatkezelési keret szükséges.
+        </div>
+        <div class="card">
+          <h3>Nem alapfunkcióként kommunikálandó</h3>
+          <ul class="plain-list">
+            <li>exit-node vagy anonim átjáró</li>
+            <li>SIM, GSM vagy VoIP proxy</li>
+            <li>nyitott public JSON/API felület</li>
+            <li>félreérthető forgalom- vagy presence-generálás</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="questions-title">
+      <div class="section-head">
+        <p class="section-kicker">Validáció</p>
+        <h2 id="questions-title">Öt kérdés, amelyre választ keres</h2>
+      </div>
+      <div class="grid two">
+        <article class="card">
+          <h3>Probléma</h3>
+          <p>Hol fáj jobban a célközönségnek: uplink backup, IoT izoláció, DNS policy, kliensobservability vagy oktatható edge lab?</p>
+        </article>
+        <article class="card">
+          <h3>Bizalom</h3>
+          <p>Milyen bizonyíték, dokumentáció és restore garancia kell ahhoz, hogy valaki hálózatba tegye?</p>
+        </article>
+        <article class="card">
+          <h3>Scope</h3>
+          <p>Mely modulokat kell kivágni vagy elrejteni, hogy egy core demonstrátor tiszta maradjon?</p>
+        </article>
+        <article class="card">
+          <h3>Forma</h3>
+          <p>Oktatási eszköz, klaszter-validáció, kutatási pilot vagy későbbi appliance irány adja a legtisztább következő lépést?</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <strong>Zsilip</strong>
+    <p>
+      Original public-facing copy and visuals prepared for a GitHub Pages landing page.
+      No external images, icon packs, fonts or vendor screenshots are bundled.
+    </p>
+  </footer>
+</body>
+</html>
