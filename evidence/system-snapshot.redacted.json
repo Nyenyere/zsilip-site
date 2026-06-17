@@ -1,0 +1,206 @@
+{
+  "schema": "zsilip.public_system_snapshot.redacted.v1",
+  "captured_at_local": "2026-06-17T10:42:34+02:00",
+  "source": "local Zsilip runtime proof artifacts under /run/zsilip",
+  "redacted": true,
+  "artifact_inventory": {
+    "runtime_proof_files": 230,
+    "json_artifacts": 178,
+    "running_zsilip_services": 12,
+    "example_artifact_families": [
+      "presentation_readiness_smoke",
+      "uplink_publication",
+      "campaign_effective_roster",
+      "client_registry",
+      "temporal_effective_gate",
+      "payload_lab_executor",
+      "hardening_audit",
+      "api_surface_ledger",
+      "ap_health",
+      "rollback_ledger"
+    ]
+  },
+  "service_surface": {
+    "observed_running_roles": [
+      "api",
+      "network_monitor",
+      "uplink_brain",
+      "uplink_switcher",
+      "failover_blackbox_logger",
+      "dns_parser",
+      "mimic_daemon",
+      "noise_engine",
+      "payload_lab_target",
+      "read_only_report_web",
+      "hardware_monitor_oled",
+      "oled_status"
+    ],
+    "supporting_services": [
+      "dnsmasq",
+      "hostapd",
+      "lighttpd",
+      "NetworkManager"
+    ]
+  },
+  "presentation_smoke": {
+    "failed_systemd_units": 0,
+    "sample_pass_checks": [
+      "lighttpd active",
+      "zsilip-api active",
+      "zsilip-payload-lab-target active",
+      "zsilip-uplink-brain active",
+      "zsilip-uplink-switcher active",
+      "hostapd active",
+      "dnsmasq active"
+    ],
+    "http_surface_sample": [
+      {
+        "path": "/",
+        "status": 200
+      },
+      {
+        "path": "/uplink/",
+        "status": 200
+      },
+      {
+        "path": "/admin/",
+        "status": 200
+      },
+      {
+        "path": "/lab/",
+        "status": 200
+      }
+    ]
+  },
+  "ap_health": {
+    "state": "ok",
+    "hostapd": "active",
+    "dnsmasq": "active",
+    "ap_interface": {
+      "role": "local access point",
+      "operstate": "up",
+      "ipv4": "redacted-local-subnet"
+    },
+    "kernel_fault_recent": false,
+    "recommendation": "no action"
+  },
+  "uplink_publication": {
+    "active_uplink": "eth0",
+    "best_uplink": "eth0",
+    "wifi_iface": "wlan1",
+    "portal": "no",
+    "portal_http_code": 204,
+    "reason": "traffic_truth_stable",
+    "interfaces": [
+      {
+        "dev": "eth0",
+        "ok": true,
+        "score": "high",
+        "score_reason": "ok",
+        "ip": "redacted",
+        "gateway": "redacted"
+      },
+      {
+        "dev": "wlan1",
+        "ok": true,
+        "score": "medium-high",
+        "score_reason": "ok",
+        "loss_percent": 0,
+        "latency_ms_bucket": "under-100",
+        "jitter_ms_bucket": "medium",
+        "rf_connected": true,
+        "ssid": "redacted",
+        "bssid": "redacted",
+        "ip": "redacted",
+        "gateway": "redacted"
+      },
+      {
+        "dev": "wwan0",
+        "ok": true,
+        "score": "fallback",
+        "score_reason": "gateway-check-penalized",
+        "loss_percent": 0,
+        "latency_ms_bucket": "under-100",
+        "jitter_ms_bucket": "low",
+        "ip": "redacted",
+        "gateway": "redacted"
+      }
+    ],
+    "score_components_observed": [
+      "loss",
+      "average_latency",
+      "jitter",
+      "gateway_reachability",
+      "portal_state",
+      "ethernet_bonus"
+    ]
+  },
+  "campaign_temporal_gate": {
+    "purpose": "show that campaign membership is not equal to uncontrolled execution",
+    "redacted_client_examples": [
+      {
+        "selected": true,
+        "campaign_member": true,
+        "effective_temporal_state": "sleep",
+        "eligible_now": false,
+        "live_execute": false,
+        "reason": "temporal_sleep",
+        "issues": [
+          "campaign_member_execute_blocked",
+          "url_signal_external_http_blocked"
+        ],
+        "provenance_sources": [
+          "temporal_gate",
+          "client_registry_run",
+          "client_session_plan",
+          "device_archetype",
+          "payload_lab_executor_state"
+        ]
+      },
+      {
+        "selected": false,
+        "campaign_member": true,
+        "effective_temporal_state": "campaign_resident_low",
+        "eligible_now": true,
+        "live_execute": true,
+        "reason": "campaign_resident_low_execute_allowed",
+        "provenance_sources": [
+          "temporal_gate",
+          "client_registry_run",
+          "client_session_plan",
+          "cover_unified_run",
+          "device_archetype"
+        ]
+      }
+    ]
+  },
+  "hardening_snapshot": {
+    "schema": "zsilip.hardening_audit.v1",
+    "ok": true,
+    "issue_count": 0,
+    "p1_count": 0,
+    "p2_count": 0,
+    "observed_controls": [
+      "approved-origin CORS behavior",
+      "POST handlers for mutating routes",
+      "GET mutation guard",
+      "local admin wrapper token requirement",
+      "Lab CGI execution scoped under /api/lab",
+      "mutation audit logger installed",
+      "sudo allowlist review script installed",
+      "presentation readiness smoke installed",
+      "travel/captive portal drill installed"
+    ],
+    "next_phase_candidates": [
+      "review remaining wildcard sudo helper grants",
+      "review admin read endpoints for same-origin assumptions and token coverage",
+      "keep compact UI for smoke and travel drill outputs"
+    ]
+  },
+  "limitations": [
+    "All client identifiers are removed or generalized.",
+    "This snapshot is point-in-time evidence, not continuous monitoring.",
+    "This snapshot supports the existence of the architecture and proof model, not production readiness.",
+    "A real handoff still needs independent security review, restore drill, threat model and privacy review."
+  ]
+}
